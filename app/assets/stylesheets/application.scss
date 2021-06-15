@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$darker-blue: #060637;
+$dark-blue: #1D1D49;
+$clear-blue: #32325A;
+$light-grey: #F5F5F5;
+$clear-brown: #C58C6D;
+$light-beige: #FFF1E6;
+
+body {
+  background: $light-grey;
+}
+
+body h1, h2, h3, p, a {
+  font-family: 'Mulish', sans-serif;
+}
