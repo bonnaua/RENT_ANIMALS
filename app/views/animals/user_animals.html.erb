@@ -1,0 +1,23 @@
+<div class="">
+  <h1>My animals</h1>
+</div>
+
+<% if @animals.empty? %>
+  <p><%= "You have listed no animal yet." %></p>
+<% else %>
+  <div class="">
+      <% @animals.each do |animal| %>
+        <%= link_to animal_path(animal) do %>
+          <div class="">
+            <% if animal.photo.attached? %>
+              <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+            <h3><%= animal.name %></h3>
+            <p><%= animal.species %></p>
+            <p><%= animal.description %></p>
+            <h3><b><%= animal.price_per_day %></b></h3>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+<% end %>

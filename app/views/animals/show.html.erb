@@ -1,0 +1,11 @@
+<div>
+  <% if @animal.photo.attached? %>
+    <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <h1><%= @animal.name %></h1>
+  <p><%= @animal.species %></p>
+  <p><%= @animal.description %></p>
+  <h3><b><%= @animal.price_per_day %></b></h3>
+</div>
+
+<%= link_to "Edit animal", edit_animal_path(@animal) %>
