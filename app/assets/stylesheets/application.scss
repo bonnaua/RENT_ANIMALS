@@ -26,3 +26,17 @@ body {
 body h1, h2, h3, p, a {
   font-family: 'Mulish', sans-serif;
 }
+
+a {
+  text-decoration: none !important;
+  color: $clear-blue !important;
+  &:hover {
+    color: $darker-blue !important;
+  }
+}
+
+.pages-title {
+  text-align: center;
+  padding: 20px 0;
+  font-weight: bold;
+}
