@@ -1,0 +1,22 @@
+<div class="">
+  <h1>My bookings</h1>
+</div>
+
+<% if @bookings.empty? %>
+  <p><%= "You have no booking yet." %></p>
+<% else %>
+  <div class="">
+      <% @bookings.each do |booking| %>
+        <%= link_to booking_path(booking) do %>
+          <div class="">
+            <h3><%= booking.animal.name %></h3>
+            <h3><%= booking.start_date %></h3>
+            <h3><%= booking.end_date %></h3>
+            <p><%= booking.animal.species %></p>
+            <p><%= booking.animal.description %></p>
+            <h3><b><%= booking.animal.price_per_day %></b></h3>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+<% end %>
