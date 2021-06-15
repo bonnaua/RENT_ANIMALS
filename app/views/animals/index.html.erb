@@ -1,18 +1,24 @@
-<div class="">
+<div class="container pages-title">
   <h1>Animals to rent</h1>
 </div>
 
-<div class="homepage-grid">
+<div class="container animals-grid">
     <% @animals.each do |animal| %>
       <%= link_to animal_path(animal) do %>
-        <div class="card-homepage">
+        <div class="card-animals">
           <% if animal.photo.attached? %>
             <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
-          <h3><%= animal.name %></h3>
-          <p><%= animal.species %></p>
-          <p><%= animal.description %></p>
-          <h3><b><%= animal.price_per_day %></b></h3>
+          <div class="card-animals-infos">
+            <div>
+              <div class="card-animals-header">
+                <h3><%= animal.name %></h3>
+                <p><%= animal.species %></p>
+              </div>
+              <p><%= animal.description %></p>
+            </div>
+            <h3><b><%= "#{animal.price_per_day}€" %></b></h3>
+          </div>
         </div>
       <% end %>
     <% end %>
