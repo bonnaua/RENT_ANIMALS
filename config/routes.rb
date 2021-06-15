@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :animals
   get 'my_animals', to: 'animals#user_animals'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :bookings, only: [ :new, :create ]
+  get 'my_bookings', to: 'bookings#user_bookings'
 end
