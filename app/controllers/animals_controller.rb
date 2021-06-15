@@ -1,10 +1,11 @@
 class AnimalsController < ApplicationController
+  before_action :set_animal, only: [:show, :destroy, :edit, :update]
+
   def index
     @animals = Animal.all
   end
 
   def show
-    set_animal
   end
 
   def new
@@ -13,27 +14,29 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    @animal.save
+    @animal.user = current_user
+    @animal.save!
 
     redirect_to animal_path(@animal)
   end
 
   def destroy
-    set_animal
     @animal.destroy
 
     redirect_to my_animals_path
   end
 
   def edit
-    set_animal
   end
 
   def update
-    set_animal
     @animal.update(animal_params)
 
     redirect_to animal_path(@animal)
+  end
+
+  def user_animals
+    @animals = current_user.animals
   end
 
   private
