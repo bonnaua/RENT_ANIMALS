@@ -14,13 +14,10 @@
             <% end %>
             <div class="card-animals-infos">
               <div>
-                <div>
-                  <h3><%= animal.name %></h3>
-                  <p><%= animal.species %></p>
-                </div>
-                <p><%= animal.description %></p>
+                <h3><%= animal.name %></h3>
+                <p><%= animal.species %></p>
               </div>
-              <h3 class="card-animals-price"><b><%= "#{animal.price_per_day}€" %></b></h3>
+              <h3><b><%= "#{animal.price_per_day}€" %></b></h3>
             </div>
           </div>
         <% end %>
