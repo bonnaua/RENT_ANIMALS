@@ -1,9 +1,11 @@
-<div class="">
+<div class="pages-title">
   <h1>My bookings</h1>
 </div>
 
 <% if @bookings.empty? %>
+  <div class="pages-title">
   <p><%= "You have no booking yet." %></p>
+  </div>
 <% else %>
   <div class="container bookings-grid">
       <% @bookings.each do |booking| %>
