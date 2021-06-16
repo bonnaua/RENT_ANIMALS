@@ -3,13 +3,13 @@
   <div class="container">
     <h1>Want to rent a
       <span id="banner-typed-text"></span>
-
     </h1>
-    <p>Change your life and raise an animal for a limited period !</p>
+    <p>Live amazing experience and raise an animal for a limited period !</p>
+    <br>
     <% if user_signed_in? %>
-    <%= link_to "Pet a new pet", animals_path %>
+      <%= link_to "Find an Animal", animals_path, class:"btn-signup-form" %>
     <% else %>
-    <%= link_to "Create your account", new_user_registration_path %>
+      <%= link_to "Create your Account", new_user_registration_path, class:"btn-signup-form" %>
     <% end %>
   </div>
 </div>
