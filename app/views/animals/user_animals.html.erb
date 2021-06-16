@@ -3,7 +3,9 @@
 </div>
 
 <% if @animals.empty? %>
-  <p><%= "You have listed no animal yet." %></p>
+  <div class="pages-title">
+    <p><%= "You have listed no animal yet." %></p>
+  </div>
 <% else %>
   <div class="container animals-grid">
       <% @animals.each do |animal| %>
