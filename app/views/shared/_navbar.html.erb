@@ -12,20 +12,23 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Find Animals", animals_path, class: "nav-link" %>
+          <%#= link_to "Find An Animal", animals_path, class: "navbar-link active-link" %>
+          <%= link_to animals_path do %>
+            <span class="navbar-link <%= 'active-link' if current_page?(animals_path) %> ">Find an animal</span>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Bookings", my_bookings_path, class: "nav-link" %>
+          <%= link_to "My Bookings", my_bookings_path, class: "navbar-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Pets", my_animals_path, class: "nav-link" %>
+          <%= link_to "My Animals", my_animals_path, class: "navbar-link" %>
         </li>
         <li class="nav-item">
-        <%= link_to "Rent a Pet", new_animal_path, class: "nav-link" %>
+        <%= link_to "Add An Animal", new_animal_path, class: "navbar-link" %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Find Animals", animals_path, class: "nav-link" %>
+          <%= link_to "Find An Animal", animals_path, class: "navbar-link" %>
         </li>
       <% end %>
     </ul>
