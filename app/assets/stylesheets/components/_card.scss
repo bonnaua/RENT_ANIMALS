@@ -92,3 +92,95 @@
   grid-gap: 20px;
   padding: 20px 20px;
 }
+
+.bookings-grid {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px;
+  padding: 20px 20px;
+  width: 70%;
+}
+
+.card-bookings {
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 400px;
+}
+
+.card-bookings > img {
+  height: 100%;
+  width: 400px;
+  object-fit: cover;
+}
+
+.card-bookings .card-bookings-infos {
+  text-align: left;
+  padding: 10px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $light-beige;
+}
+
+.card-bookings h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 5px;
+  color: $darker-blue;
+  padding: 5px;
+}
+
+.card-bookings h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+  color: $darker-blue;
+}
+
+.card-bookings h4 {
+  font-size: 16px;
+  opacity: .7;
+  margin: 5;
+  padding: 5px;
+  color: $light-beige;
+  background: $darker-blue;
+  border-radius: 10px;
+}
+
+.card-bookings .card-bookings-title {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100px;
+}
+
+.card-bookings .card-bookings-description {
+  text-align: left;
+  padding: 10px;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  background: $light-beige;
+  border-radius: 5px;
+}
+
+.card-bookings .card-bookings-more-price {
+  text-align: left;
+  padding: 10px;
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+

@@ -5,16 +5,34 @@
 <% if @bookings.empty? %>
   <p><%= "You have no booking yet." %></p>
 <% else %>
-  <div class="">
+  <div class="container bookings-grid">
       <% @bookings.each do |booking| %>
         <%= link_to booking_path(booking) do %>
-          <div class="">
-            <h3><%= booking.animal.name %></h3>
-            <h3><%= booking.start_date %></h3>
-            <h3><%= booking.end_date %></h3>
-            <p><%= booking.animal.species %></p>
-            <p><%= booking.animal.description %></p>
-            <h3><b><%= booking.animal.price_per_day %></b></h3>
+          <div class="card-bookings">
+             <% if booking.animal.photo.attached? %>
+              <%= cl_image_tag booking.animal.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+            <div class="card-bookings-infos">
+              <div class="card-bookings-title">
+                <div>
+                  <h1><%= booking.animal.name %> - <%= booking.animal.species %></h1>
+                </div>
+                <div>
+                  <h4><b><%= booking.start_date %> - <%= booking.end_date %></b></h4>
+                </div>
+              </div>
+              <div class= card-bookings-description>
+                <p><%= booking.animal.description %></p>
+              </div>
+              <div class= card-bookings-more-price>
+                <div>
+                  <h1></h1>
+                </div>
+                <div>
+                <h3><b><%= "Price: #{booking.animal.price_per_day}€" %></b></h3>
+                </div>
+              </div>
+            </div>
           </div>
         <% end %>
       <% end %>
