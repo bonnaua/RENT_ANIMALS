@@ -9,6 +9,7 @@ require 'uri'
 
 
 p "destroying users"
+Booking.destroy_all
 User.destroy_all
 p "users destroyed"
 
