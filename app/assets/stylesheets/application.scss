@@ -40,3 +40,10 @@ a {
   padding: 20px 0;
   font-weight: bold;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
