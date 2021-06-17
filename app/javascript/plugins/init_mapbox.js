@@ -6,7 +6,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 1500, animate: true, linear: false });
+  map.fitBounds(bounds, { maxZoom: 11, duration: 1500, animate: true, linear: false });
 };
 
 const initMapbox = () => {
@@ -17,7 +17,8 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/yourimg/ckpzkrxib28fk17p3mwwivja4'
+      style: 'mapbox://styles/yourimg/ckpzkrxib28fk17p3mwwivja4',
+      center: [48.85692464029954, 2.351031435475133]
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {

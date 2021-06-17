@@ -1,70 +1,72 @@
-<div class="pages-title">
-  <div class="no-result d-flex flex-column">
-    <div class="search-bar-full">
-      <div class="search">
 
-
-        <%= form_tag animals_path, method: :get, class: 'w-100' do %>
-          <div class="input-container">
-            <%= text_field_tag :query,
-                 params[:query],
-                 class: "search__input",
-                 placeholder: "Search ..."
-               %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-      <br>
-      <div class="no-result-text">
-        <% if @animals_search.size === 0 %>
-          <%= "No result found but you might like these animals 👇"  if params[:query].present?%>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
   <div class="main-container">
-    <div class="animals-grid">
-        <% if @animals_search.size === 0 %>
-          <% @animals.each do |animal| %>
-            <%= link_to animal_path(animal) do %>
-              <div class="card-animals">
-                <% if animal.photo.attached? %>
-                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
-                <% end %>
-                <div class="card-animals-infos">
-                  <div>
-                    <h3><%= animal.name %></h3>
-                    <p><%= animal.species %></p>
-                  </div>
-                  <h3><b><%= "#{animal.price_per_day}€" %></b></h3>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% else %>
-          <% @animals_search.each do |animal| %>
-            <%= link_to animal_path(animal) do %>
-              <div class="card-animals">
-                <% if animal.photo.attached? %>
-                  <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
-                <% end %>
-                <div class="card-animals-infos">
-                  <div>
-                    <h3><%= animal.name %></h3>
-                    <p><%= animal.species %></p>
-                  </div>
-                  <h3><b><%= "#{animal.price_per_day}€" %></b></h3>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
-    </div>
+    <div>
+        <div class="search-bar-position">
+          <div>
+            <div>
+              <div class="search">
 
-    <div id="map" style="width: 100%;height: 900px;"
+
+                <%= form_tag animals_path, method: :get, class: 'w-100' do %>
+                  <div class="input-container">
+                    <%= text_field_tag :query,
+                         params[:query],
+                         class: "search__input w-100",
+                         placeholder: "Search for animals here..."
+                       %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <br>
+            <div class="no-result-text">
+              <% if @animals_search.size === 0 %>
+                <%= "No result found but you might like these animals 👇"  if params[:query].present?%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <div class="animals-grid">
+          <% if @animals_search.size === 0 %>
+            <% @animals.each do |animal| %>
+              <%= link_to animal_path(animal) do %>
+                <div class="card-animals">
+                  <% if animal.photo.attached? %>
+                    <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                  <% end %>
+                  <div class="card-animals-infos">
+                    <div>
+                      <h3><%= animal.name %></h3>
+                      <p><%= animal.species %></p>
+                    </div>
+                    <h3><b><%= "#{animal.price_per_day}€" %></b></h3>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% @animals_search.each do |animal| %>
+              <%= link_to animal_path(animal) do %>
+                <div class="card-animals">
+                  <% if animal.photo.attached? %>
+                    <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                  <% end %>
+                  <div class="card-animals-infos">
+                    <div>
+                      <h3><%= animal.name %></h3>
+                      <p><%= animal.species %></p>
+                    </div>
+                    <h3><b><%= "#{animal.price_per_day}€" %></b></h3>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+    <div id="map" style="width: 449px; height: 900px;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-</div>
+
