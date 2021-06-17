@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   end
   get 'my_animals', to: 'animals#user_animals'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :bookings
+  resources :bookings, only: [:update]
   get 'my_bookings', to: 'bookings#user_bookings'
 end
