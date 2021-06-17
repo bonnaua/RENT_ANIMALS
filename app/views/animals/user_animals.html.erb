@@ -1,9 +1,11 @@
 <div class="container pages-title">
-  <h1>My animals</h1>
+  <h1>My Animals</h1>
 </div>
 
 <% if @animals.empty? %>
-  <p><%= "You have listed no animal yet." %></p>
+  <div class="pages-title">
+    <p><%= "You have listed no animal yet." %></p>
+  </div>
 <% else %>
   <div class="container animals-grid">
       <% @animals.each do |animal| %>

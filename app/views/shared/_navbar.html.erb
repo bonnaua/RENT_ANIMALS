@@ -17,18 +17,31 @@
             <span class="navbar-link <%= 'active-link' if current_page?(animals_path) %> ">Find an animal</span>
           <% end %>
         </li>
+
         <li class="nav-item">
-          <%= link_to "My Bookings", my_bookings_path, class: "navbar-link" %>
+          <%= link_to my_bookings_path do %>
+            <span class="navbar-link <%= 'active-link' if current_page?(my_bookings_path) %> ">My Bookings</span>
+          <% end %>
         </li>
+
         <li class="nav-item">
-          <%= link_to "My Animals", my_animals_path, class: "navbar-link" %>
+          <%= link_to my_animals_path do %>
+            <span class="navbar-link <%= 'active-link' if current_page?(my_animals_path) %> ">My Animals</span>
+          <% end %>
         </li>
+
         <li class="nav-item">
-        <%= link_to "Add An Animal", new_animal_path, class: "navbar-link" %>
+        <%#= link_to "Add An Animal", new_animal_path, class: "navbar-link" %>
+          <%= link_to new_animal_path do %>
+            <span class="navbar-link <%= 'active-link' if current_page?(new_animal_path) %> ">Add an Animal</span>
+          <% end %>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Find An Animal", animals_path, class: "navbar-link" %>
+        <li class="nav-item active">
+          <%#= link_to "Find An Animal", animals_path, class: "navbar-link active-link" %>
+          <%= link_to animals_path do %>
+            <span class="navbar-link <%= 'active-link' if current_page?(animals_path) %> ">Find an animal</span>
+          <% end %>
         </li>
       <% end %>
     </ul>

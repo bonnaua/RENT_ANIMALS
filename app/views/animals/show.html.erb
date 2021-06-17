@@ -1,13 +1,27 @@
-<div>
-  <% if @animal.photo.attached? %>
-    <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <h1><%= @animal.name %></h1>
-  <p><%= @animal.species %></p>
-  <p><%= @animal.description %></p>
-  <h3><b><%= @animal.price_per_day %></b></h3>
+<div class="container bookings-grid">
+  <div class="card-bookings">
+    <% if @animal.photo.attached? %>
+      <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <div class="card-bookings-infos">
+      <div class="card-bookings-title">
+        <h1><%= @animal.name %> - <%= @animal.species %></h1>
+        <h3><%= "#{@animal.price_per_day} €" %></h3>
+      </div>
+      <div class="card-bookings-description">
+        <p><%= @animal.description %></p>
+      </div>
+      <div class= card-bookings-more-price>
+         <div>
+           <h1></h1>
+         </div>
+        <div class=btn-ghost>
+          <%= link_to "Book this pet", new_animal_booking_path(@animal) %>
+       </div>
+       <div class="btn-ghost edit-animal">
+          <%= link_to "Edit animal", edit_animal_path(@animal) %>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "Edit animal", edit_animal_path(@animal) %>
-
-<%= link_to "Book this pet", new_animal_booking_path(@animal) %>
