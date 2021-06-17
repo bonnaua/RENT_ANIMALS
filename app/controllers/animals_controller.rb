@@ -17,6 +17,12 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    @marker = [{
+        lat: @animal.latitude,
+        lng: @animal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { animal: @animal }),
+        image_url: helpers.asset_url('pawprint.svg')
+      }]
   end
 
   def new
