@@ -177,23 +177,34 @@
 
 .card-bookings .card-bookings-title {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  height: 100px;
+  height: 50px;
 }
 
 .card-bookings .card-bookings-description {
+  text-align: center;
+  padding: 10px;
+  align-items: center;
+  position: relative;
+  height: 40px;
+  background: $light-beige;
+  border-radius: 5px;
+}
+
+.card-bookings .card-bookings-elements {
   text-align: left;
   padding: 10px;
   align-items: center;
   position: relative;
+  display: flex;
+  justify-content: space-between;
   height: 200px;
-  background: $light-beige;
-  border-radius: 5px;
 }
+
 
 .card-bookings .card-bookings-more-price {
   text-align: left;
@@ -202,15 +213,18 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 10px;
 }
 
-
-.card-bookings .edit-animal {
-  position: absolute;
+.card-bookings .card-bookings-dos-donts {
+  text-align: left;
+  padding: 10px;
+  align-items: center;
+  position: relative;
+  height: 40px;
+  background: $light-beige;
+  border-radius: 5px;
 }
-
-
 
 //CARDS MAP
 
