@@ -4,14 +4,17 @@ class AnimalsController < ApplicationController
 
   def index
     #search bar
+    @animals_search = []
     if params[:query].present?
       @animals_search = Animal.global_search(params[:query])
     end
 
     @animals = Animal.all
 
+
+    @animals_to_geocode = @animals_search.size == 0 ? @animals : @animals_search
     #geocoder
-    @markers = @animals.geocoded.map do |animal|
+    @markers = @animals_to_geocode.geocoded.map do |animal|
       {
         lat: animal.latitude,
         lng: animal.longitude,
@@ -43,7 +46,9 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
-    @animal.destroy
+    if current_user == @animal.user
+      @animal.destroy
+    end
 
     redirect_to my_animals_path
   end
