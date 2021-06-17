@@ -12,15 +12,27 @@
         <p><%= @animal.description %></p>
       </div>
       <div class= card-bookings-more-price>
-         <div>
-           <h1></h1>
-         </div>
-        <div class=btn-ghost>
-          <%= link_to "Book this pet", new_animal_booking_path(@animal) %>
-       </div>
-       <div class="btn-ghost edit-animal">
-          <%= link_to "Edit animal", edit_animal_path(@animal) %>
-      </div>
+        <% if current_user == @animal.user %>
+          <div>
+            <h1></h1>
+          </div>
+          <div class="btn-ghost edit-animal">
+            <%= link_to "Edit animal", edit_animal_path(@animal) %>
+          </div>
+          <div class="btn-ghost edit-animal">
+            <%= link_to "Delete animal",
+                         animal_path(@animal),
+                         method: :delete,
+                         data: { confirm: "Are you sure you don't want to rent your pet ?"}  %>
+          </div>
+        <% else %>
+          <div>
+            <h1></h1>
+          </div>
+          <div class=btn-ghost>
+            <%= link_to "Book this pet", new_animal_booking_path(@animal) %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
