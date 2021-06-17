@@ -3,6 +3,11 @@ class AnimalsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    #search bar
+    if params[:query].present?
+      @animals_search = Animal.global_search(params[:query])
+    end
+
     @animals = Animal.all
 
     #geocoder
@@ -17,6 +22,12 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    @marker = [{
+        lat: @animal.latitude,
+        lng: @animal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { animal: @animal }),
+        image_url: helpers.asset_url('pawprint.svg')
+      }]
   end
 
   def new

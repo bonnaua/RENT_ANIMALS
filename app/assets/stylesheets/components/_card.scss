@@ -205,6 +205,46 @@
   height: 100px;
 }
 
-// .card-bookings .edit-animal {
-//   position: absolute;
+
+.card-bookings .edit-animal {
+  position: absolute;
+}
+
+
+
+//CARDS MAP
+
+.card-map {
+  border-radius: 5px;
+  overflow: hidden;
+  background: white;
+  height:220px;
+  width: 200px;
+}
+
+// .card-map > img {
+//   height: 250px;
+//   width: 100%;
+//   object-fit: cover;
 // }
+.card-map h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.card-map p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 5px;
+}
+
+.card-map .card-map-infos {
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
