@@ -1,3 +1,7 @@
+$shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), inset -.2rem -.2rem .5rem var(--white);
+
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -32,3 +36,20 @@
   text-decoration: none;
   color:white !important;
 }
+
+// .btn-search {
+//   background-color: $clear-brown;
+//   border-radius: 50%;
+//   color: $light-beige;
+//   font-weight: lighter;
+//   opacity: 0.8;
+// }
+// .btn-search:hover {
+//   opacity: 1;
+//   text-decoration: none;
+//   color:$light-beige !important;
+//   font-weight: bold;
+
+// }
+
+
