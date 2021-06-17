@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_101010) do
+
+ActiveRecord::Schema.define(version: 2021_06_17_124548) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +52,12 @@ ActiveRecord::Schema.define(version: 2021_06_17_101010) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "size"
+    t.string "sexe"
+    t.string "favorite_food"
+    t.string "favorite_game"
+    t.string "dos"
+    t.string "donts"
     t.index ["user_id"], name: "index_animals_on_user_id"
   end
 
