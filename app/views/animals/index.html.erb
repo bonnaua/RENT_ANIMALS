@@ -1,15 +1,32 @@
 <div class="pages-title">
-  <div class="search">
-    <input type="text" class="search__input" placeholder="Search something ...">
-    <!-- <div class="search__icon">
-      <i class="fas fa-search"></i>
-    </div> -->
+  <div class="no-result d-flex flex-column">
+    <div class="search-bar-full">
+      <div class="search">
+
+
+        <%= form_tag animals_path, method: :get, class: 'w-100' do %>
+          <div class="input-container">
+            <%= text_field_tag :query,
+                 params[:query],
+                 class: "search__input",
+                 placeholder: "Search ..."
+               %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+      <br>
+      <div class="no-result-text">
+        <% if @animals_search.size === 0 %>
+          <%= "No result found but you might like these animals 👇"  if params[:query].present?%>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="main-container">
     <div class="animals-grid">
-        <% if @animals_search.nil? %>
-          <%#= "No result found but you might like these animals" %>
+        <% if @animals_search.size === 0 %>
           <% @animals.each do |animal| %>
             <%= link_to animal_path(animal) do %>
               <div class="card-animals">
