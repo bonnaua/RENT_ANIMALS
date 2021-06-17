@@ -61,12 +61,38 @@
   opacity: 1;
 }
 
-.btn-status {
+.btn-accepted {
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 340px;
   color: white;
-  padding: 8px 24px;
+  padding: 8px 10px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: green;
   opacity: 0.7;
 }
+
+.btn-declined {
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 340px;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: red;
+  opacity: 0.7;
+}
+
+.btn-pending {
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 340px;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: orange;
+  opacity: 0.7;
+}
+
 
 

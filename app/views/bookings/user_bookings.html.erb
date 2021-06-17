@@ -14,6 +14,19 @@
              <% if booking.animal.photo.attached? %>
               <%= cl_image_tag booking.animal.photo.key, height: 300, width: 400, crop: :fill %>
             <% end %>
+            <% if booking.status == "Accepted" %>
+              <div class="btn-accepted">
+                <%= booking.status %>
+              </div>
+            <% elsif booking.status == "Declined" %>
+              <div class="btn-declined">
+                <%= booking.status %>
+              </div>
+            <% else %>
+              <div class="btn-pending">
+                <%= booking.status %>
+              </div>
+            <% end %>
             <div class="card-bookings-infos">
               <div class="card-bookings-title">
                 <div>
@@ -54,14 +67,23 @@
 <% else %>
   <div class="container bookings-grid">
     <% @my_bookings.each do |booking| %>
-      <div class="btn-status">
-        <%= booking.status %>
-      </div>
       <div class="card-bookings">
              <% if booking.animal.photo.attached? %>
               <%= cl_image_tag booking.animal.photo.key, height: 300, width: 400, crop: :fill %>
             <% end %>
-
+            <% if booking.status == "Accepted" %>
+              <div class="btn-accepted">
+                <%= booking.status %>
+              </div>
+            <% elsif booking.status == "Declined" %>
+              <div class="btn-declined">
+                <%= booking.status %>
+              </div>
+            <% else %>
+              <div class="btn-pending">
+                <%= booking.status %>
+              </div>
+            <% end %>
             <div class="card-bookings-infos">
               <div class="card-bookings-title">
                 <div>
@@ -76,8 +98,10 @@
               </div>
               <div class= card-bookings-more-price>
                 <div>
-                  <%= link_to "Accept", booking_path(booking, status: "Accepted"), method: :patch, class: "btn-ghost-green" %>
-                  <%= link_to "Decline", booking_path(booking, status: "Declined"), method: :patch, class: "btn-ghost-red" %>
+                  <% if booking.status == "Pending" %>
+                    <%= link_to "Accept", booking_path(booking, status: "Accepted"), method: :patch, class: "btn-ghost-green" %>
+                    <%= link_to "Decline", booking_path(booking, status: "Declined"), method: :patch, class: "btn-ghost-red" %>
+                  <% end %>
                 </div>
                 <div>
                 <h3><b><%= "Price: #{booking.animal.price_per_day}€" %></b></h3>
