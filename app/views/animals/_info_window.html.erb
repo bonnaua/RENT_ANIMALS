@@ -1,0 +1,9 @@
+<div>
+  <% if animal.photo.attached? %>
+      <%= cl_image_tag animal.photo.key, height: 150, width: 200, crop: :fill %>
+    <% end %>
+  <h2><%= animal.name %></h2>
+  <p><%= animal.species %></p>
+  <p><b><%= "#{animal.price_per_day}€" %></b></p>
+</div>
+
