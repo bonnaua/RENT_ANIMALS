@@ -3,6 +3,11 @@ class AnimalsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    #search bar
+    if params[:query].present?
+      @animals_search = Animal.global_search(params[:query])
+    end
+
     @animals = Animal.all
 
     #geocoder
@@ -38,7 +43,9 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
-    @animal.destroy
+    if current_user == @animal.user
+      @animal.destroy
+    end
 
     redirect_to my_animals_path
   end

@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.status = "Pending"
     @booking.user = current_user
     if @booking.save
-      redirect_to animal_path(@animal), notice: "The booking has been successfully created"
+      redirect_to my_bookings_path, notice: "The booking has been successfully created"
     else
       render :new
     end
