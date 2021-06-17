@@ -1,12 +1,13 @@
-<div>
+<div class="card-map">
   <% if animal.photo.attached? %>
       <%= cl_image_tag animal.photo.key, height: 150, width: 200, crop: :fill %>
     <% end %>
-  <h2><%= animal.name %></h2>
-  <p><%= animal.species %></p>
-  <p><b><%= "#{animal.price_per_day}€" %></b></p>
-</div>
-<<<<<<< HEAD
+  <div class="card-map-infos">
+    <div>
+      <h2><%= animal.name %></h2>
+      <p><%= animal.species %></p>
+    </div>
+    <p><b><%= "#{animal.price_per_day}€" %></b></p>
+  </div>
 
-=======
->>>>>>> e51d29ce48aa75a5062e04b5a5346fcb8186a9a0
+</div>
