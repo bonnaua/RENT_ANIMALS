@@ -46,7 +46,9 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
-    @animal.destroy
+    if current_user == @animal.user
+      @animal.destroy
+    end
 
     redirect_to my_animals_path
   end
