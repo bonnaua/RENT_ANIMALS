@@ -16,6 +16,8 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+//= require jquery
+//= require jquery_ujs
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -27,9 +29,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { loadDynamicBannerText } from '../components/title';
+
 import { dragElement } from '../components/searchbar';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpickr";
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,6 +42,9 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('banner-typed-text')) {
     loadDynamicBannerText();
   };
+  if (document.getElementById('btn-bookings')) {
+    displayBookings();
+  }
 
 });
 
