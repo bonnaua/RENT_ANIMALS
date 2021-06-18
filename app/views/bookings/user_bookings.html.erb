@@ -38,7 +38,7 @@
               <div class="card-bookings-infos">
                 <div class="card-bookings-title">
                   <h1><%= "#{booking.animal.name} - #{booking.animal.species}" %></h1>
-                  <h3 class = "price"><%= "#{booking.total_price} €" %></h3>
+                  <h3 class = "price"><%= "#{booking.animal.price_per_day} €" %></h3>
                 </div>
                 <div class="card-bookings-description">
                   <p><strong>"<i><%= booking.animal.description %></i>"</strong></p>
