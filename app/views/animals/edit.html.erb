@@ -4,13 +4,21 @@
   <%= simple_form_for(@animal) do |f| %>
     <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :category %>
+    <%= f.label :category %>
+    <%= f.select :category, ["Pet", "Bird", "Insect", "Exotic", "Amphibian", "Reptile", "Fish"], selected: "Pet" %>
     <%= f.input :species %>
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :age %>
-    <%= f.input :price_per_day %>
+    <%= f.input :size %>
+    <%= f.label :sexe %>
+    <%= f.select :sexe, ["Female", "Male", "Hermaphrodite"] %>
     <%= f.input :photo, as: :file %>
+    <%= f.input :price_per_day %>
+    <%= f.input :favorite_food %>
+    <%= f.input :favorite_game %>
+    <%= f.input :dos, label: "Do's" %>
+    <%= f.input :donts, label: "Dont's" %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Edit my animal", class: "btn-ghost btn-devise-form" %>

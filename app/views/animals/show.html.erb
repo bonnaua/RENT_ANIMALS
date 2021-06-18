@@ -5,11 +5,35 @@
     <% end %>
     <div class="card-bookings-infos">
       <div class="card-bookings-title">
-        <h1><%= @animal.name %> - <%= @animal.species %></h1>
+        <h1><%= "#{@animal.name} - #{@animal.species}" %></h1>
         <h3><%= "#{@animal.price_per_day} €" %></h3>
       </div>
       <div class="card-bookings-description">
-        <p><%= @animal.description %></p>
+        <p><i><%= @animal.description %></i></p>
+      </div>
+      <div class="card-bookings-elements">
+      <div class="card-bookings-facts">
+        <ul>
+          <li> <%= "Category #{@animal.category}" %> </li>
+          <li> <%= "Size: #{@animal.size}" %> </li>
+          <li> <%= "Age #{@animal.age}" %> </li>
+          <li> <%= "Sexe: #{@animal.sexe}" %> </li>
+        </ul>
+      </div>
+      <div class="card-bookings-owner">
+        <ul>
+          <li> <%= "Owner: #{@animal.user}" %> </li>
+          <li> <%= "#{@animal.address}" %> </li>
+          <li> <%= "Favorite Game: #{@animal.favorite_game}" %> </li>
+          <li> <%= "Favorite Food: #{@animal.favorite_food}" %> </li>
+        </ul>
+      </div>
+      </div>
+      <div class="card-bookings-dos-donts">
+        <ul>
+        <li> <%= "Do's: #{@animal.dos}" %> </li>
+        <li> <%= "Dont's: #{@animal.donts}"%> </li>
+        </ul>
       </div>
       <div class= card-bookings-more-price>
         <% if current_user == @animal.user %>
