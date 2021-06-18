@@ -15,7 +15,6 @@
     <% else %>
       <div class="container bookings-grid">
           <% @bookings.each do |booking| %>
-            <%= link_to booking_path(booking) do %>
               <div class="card-bookings">
                  <% if booking.animal.photo.attached? %>
                   <%= cl_image_tag booking.animal.photo.key, height: 300, width: 400, crop: :fill %>
@@ -56,7 +55,6 @@
                 </div>
               </div>
             <% end %>
-          <% end %>
       </div>
     <% end %>
   </div>
