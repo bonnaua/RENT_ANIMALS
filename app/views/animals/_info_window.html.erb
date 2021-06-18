@@ -1,13 +1,15 @@
 <div class="card-map">
-  <% if animal.photo.attached? %>
-      <%= cl_image_tag animal.photo.key, height: 150, width: 200, crop: :fill %>
-    <% end %>
-  <div class="card-map-infos">
-    <div>
-      <h2><%= animal.name %></h2>
-      <p><%= animal.species %></p>
+  <%= link_to animal_path(animal) do %>
+    <% if animal.photo.attached? %>
+        <%= cl_image_tag animal.photo.key, height: 150, width: 200, crop: :fill %>
+      <% end %>
+    <div class="card-map-infos">
+      <div>
+        <h2><%= animal.name %></h2>
+        <p><%= animal.species %></p>
+      </div>
+      <p><b><%= "#{animal.price_per_day}€" %></b></p>
     </div>
-    <p><b><%= "#{animal.price_per_day}€" %></b></p>
-  </div>
+  <% end %>
 
 </div>
