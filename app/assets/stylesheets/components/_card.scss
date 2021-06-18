@@ -126,6 +126,7 @@
 
 .card-bookings {
   display: flex;
+  flex: grow;
   align-items: center;
   border-radius: 2px;
   overflow: hidden;
@@ -226,6 +227,12 @@
   border-radius: 5px;
 }
 
+.card-bookings .card-bookings-owner ul {
+  border-left: 2px solid $clear-brown;
+
+}
+
+
 //CARDS MAP
 
 .card-map {
@@ -267,3 +274,10 @@
   width: 800px;
 }
 
+.do-dont-buttons {
+  display:flex;
+  align-items: flex-start;
+  flex: 1 100%;
+  justify-content: space-between;
+  padding-top: 24px;
+}

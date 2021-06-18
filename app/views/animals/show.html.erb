@@ -6,57 +6,57 @@
     <div class="card-bookings-infos">
       <div class="card-bookings-title">
         <h1><%= "#{@animal.name} - #{@animal.species}" %></h1>
-        <h3><%= "#{@animal.price_per_day} €" %></h3>
+        <h3 class = "price"><%= "#{@animal.price_per_day} €" %></h3>
       </div>
       <div class="card-bookings-description">
-        <p><i><%= @animal.description %></i></p>
+        <p><strong>"<i><%= @animal.description %></i>"</strong></p>
       </div>
       <div class="card-bookings-elements">
       <div class="card-bookings-facts">
         <ul>
-          <li> <%= "Category #{@animal.category}" %> </li>
+          <li> <%= "Category: #{@animal.category}" %> </li>
           <li> <%= "Size: #{@animal.size}" %> </li>
-          <li> <%= "Age #{@animal.age}" %> </li>
+          <li> <%= "Age: #{@animal.age}" %>y </li>
           <li> <%= "Sexe: #{@animal.sexe}" %> </li>
         </ul>
       </div>
       <div class="card-bookings-owner">
         <ul>
-          <li> <%= "Owner: #{@animal.user}" %> </li>
           <li> <%= "#{@animal.address}" %> </li>
           <li> <%= "Favorite Game: #{@animal.favorite_game}" %> </li>
           <li> <%= "Favorite Food: #{@animal.favorite_food}" %> </li>
         </ul>
       </div>
       </div>
-      <div class="card-bookings-dos-donts">
-        <ul>
-        <li> <%= "Do's: #{@animal.dos}" %> </li>
-        <li> <%= "Dont's: #{@animal.donts}"%> </li>
-        </ul>
-      </div>
-      <div class= card-bookings-more-price>
-        <% if current_user == @animal.user %>
-          <div>
-            <h1></h1>
+      <div class = "do-dont-buttons">
+        <div class="card-bookings-dos-donts">
+          <ul>
+          <li> <%= "✅ : #{@animal.dos}" %> </li>
+          <li> <%= "❌ : #{@animal.donts}"%> </li>
+          </ul>
+        </div>
+        <div class= card-bookings-more-price>
+          <% if current_user == @animal.user %>
+          <div class = 'buttons'>
+            <div class="btn-edit edit-animal">
+              <%= link_to "Edit", edit_animal_path(@animal) %>
+            </div>
+            <div class="btn-delete edit-animal">
+              <%= link_to "Delete",
+                           animal_path(@animal),
+                           method: :delete,
+                           data: { confirm: "Are you sure you don't want to rent your pet ?"}  %>
+            </div>
           </div>
-          <div class="btn-ghost edit-animal">
-            <%= link_to "Edit animal", edit_animal_path(@animal) %>
-          </div>
-          <div class="btn-ghost edit-animal">
-            <%= link_to "Delete animal",
-                         animal_path(@animal),
-                         method: :delete,
-                         data: { confirm: "Are you sure you don't want to rent your pet ?"}  %>
-          </div>
-        <% else %>
-          <div>
-            <h1></h1>
-          </div>
-          <div class=btn-ghost>
-            <%= link_to "Book this pet", new_animal_booking_path(@animal) %>
-          </div>
-        <% end %>
+          <% else %>
+            <div>
+              <h1></h1>
+            </div>
+            <div class=btn-ghost>
+              <%= link_to "Book this pet", new_animal_booking_path(@animal) %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
