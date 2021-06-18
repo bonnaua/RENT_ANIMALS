@@ -16,6 +16,10 @@ const initFlatpickr = () => {
       const totalPriceField = document.getElementById('total-price');
       daysFields.innerText = numberOfDays;
       totalPriceField.innerText = totalPrice;
+      const inputTotalPrice = document.getElementById('input_total_price');
+      const inputNumberOfDays = document.getElementById('input_number_of_days');
+      inputTotalPrice.value = totalPrice;
+      inputNumberOfDays.value = numberOfDays;
     }
   });
 }

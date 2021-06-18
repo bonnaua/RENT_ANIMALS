@@ -5,6 +5,8 @@
     <div class="form-inputs">
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
+      <%= f.input :nb_of_days, as: :hidden, input_html: {value: 0, id: "input_number_of_days"} %>
+      <%= f.input :total_price, as: :hidden, input_html: {value: 0, id: "input_total_price"} %>
     </div>
     <div class="form-recap">
       <p> <b> Number of days: <span id="duration"></span></b></p>
@@ -14,6 +16,7 @@
       <%= f.button :submit, "Book !", class: "btn-ghost btn-devise-form" %>
     </div>
     <% end %>
+    <input type="hidden" value= "<%= @animal.price_per_day %>" id="animal_price" >
 </div>
 
-<input type="hidden" value= "<%= @animal.price_per_day %>" id="animal_price" >
+
