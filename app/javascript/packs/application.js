@@ -33,6 +33,7 @@ import { loadDynamicBannerText } from '../components/title';
 // import { dragElement } from '../components/searchbar';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { displayBookings } from '../components/bookings_btns';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
@@ -41,6 +42,9 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('banner-typed-text')) {
     loadDynamicBannerText();
   };
+  if (document.getElementById('btn-bookings')) {
+    displayBookings();
+  }
 
 });
 
