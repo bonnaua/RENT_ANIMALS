@@ -3,8 +3,12 @@
   <br>
   <%= simple_form_for [@animal, @booking] do |f| %>
     <div class="form-inputs">
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date,as: :date, html5: true %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
+    </div>
+    <div class="form-recap">
+      <p> <b> Number of days: <span id="duration"></span></b></p>
+      <p> <b> Total price: <span id="total-price"></span>€<b></p>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Book !", class: "btn-ghost btn-devise-form" %>
@@ -12,7 +16,4 @@
     <% end %>
 </div>
 
-
-
-
-
+<input type="hidden" value= "<%= @animal.price_per_day %>" id="animal_price" >
