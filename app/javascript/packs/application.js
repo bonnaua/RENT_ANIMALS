@@ -16,6 +16,8 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+//= require jquery
+//= require jquery_ujs
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -29,6 +31,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { loadDynamicBannerText } from '../components/title';
 // import { dragElement } from '../components/searchbar';
+
 import { initMapbox } from '../plugins/init_mapbox';
 import { displayBookings } from '../components/bookings_btns';
 

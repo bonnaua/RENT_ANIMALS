@@ -120,6 +120,37 @@ $inner-shadow: 0 0 15px rgba(0,0,0,0.2),
     outline: none;
     box-shadow: $shadow;
   }
+
+.btn-delete {
+  color: white !important;
+  background-color:$clear-brown;
+  padding: 8px 24px;
+  border: 2px solid $clear-brown;
+  border-radius: 4px;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  margin-top:4px;
+  text-align:center;
+}
+.btn-delete:hover {
+  opacity: 1;
+}
+
+.btn-edit {
+  color: white !important;
+  padding: 8px 24px;
+  border: 1px solid $clear-brown;
+  border-radius: 4px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  text-align:center;
+
+}
+.btn-edit:hover {
+  opacity: 1;
+
 }
 
 // .btn-search {
@@ -137,4 +168,14 @@ $inner-shadow: 0 0 15px rgba(0,0,0,0.2),
 
 // }
 
+.buttons {
+  display: flex;
+  flex-direction:column;
+  padding: 4px;
+}
+
+.card-bookings-dos-donts ul {
+  list-style-type: none;
+
+}
 

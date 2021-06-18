@@ -64,6 +64,13 @@ body {
   font-size: 24px;
   text-align: left;
   padding-left: 24px;
-
-
 }
+
+.price {
+  background-color: $clear-brown;
+  padding: 4px;
+  border-radius: 4px;
+  color: $light-grey;
+  font-weight:bold;
+}
+
